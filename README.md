@@ -1,4 +1,4 @@
-# WeatherToday
+# Weather Today
 A simple web app, showing the weather in various locations. Documentation is included in the repository, starting from the readme.
 
 ## Getting Started
