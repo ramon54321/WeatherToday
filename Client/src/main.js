@@ -1,6 +1,8 @@
+import thing from "./thing"
 
-const thing = require("./thing.js")
+var app = new Vue({
+	el: "#app",
+	data: {
 
-console.log("Hello");
-
-thing();
+	}
+})

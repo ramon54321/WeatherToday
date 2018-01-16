@@ -4,7 +4,7 @@
   "description": "Client - A simple weather web app showing temperature at pre-defined observation points.",
   "main": "",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --color"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,10 @@
   },
   "homepage": "https://github.com/ramon54321/WeatherToday#readme",
   "devDependencies": {
-    "webpack": "^3.10.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.2"
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "^3.10.0"
   }
 }

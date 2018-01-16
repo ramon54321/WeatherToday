@@ -3,12 +3,11 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 //const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	entry: "./Source/main.js",
+	entry: "./src/main.js",
 	output: {
 		filename: "../Server/static/bundle.js"
 	},
 	module: {
-
 		loaders: [
 			{
 				test: /\.js/,
@@ -18,12 +17,10 @@ module.exports = {
 		]
 	},
 	plugins: [
-
 		new UglifyJsPlugin({
 			test: /\.js/,
 			parallel: 4,
 			sourceMap: true
 		})
-
 	]
 };
