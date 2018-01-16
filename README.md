@@ -12,7 +12,8 @@ In an attempt to keep the data somewhat accurate, the data will be validated bef
 Unfortunately this is a closed project, but feel free to browse the source!
 
 ## Diagrams
-<add diagrams here>
+#### Component Diagram
+![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
 ### 14 Jan 2018
