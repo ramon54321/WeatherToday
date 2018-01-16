@@ -19,7 +19,11 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
-### 16 Jan 2018
+### 16 Jan 2018 - Afternoon
+I proceeded to blockout the previous layout, and just entering some placeholder text to make sense of it. I also added some transitions in sass, which work really well, moving the main block up and out to make space for the orange and light blue block, that can be seen below.
+![Layout](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/blockout.jpg)
+
+### 16 Jan 2018 - Morning
 Today I set up the base project files, including the build environment. I opted for the simplest build I could think of, using the bare minimum in webpack. I decided it is still worth it using webpack, because it will allow using imports client side, organizing the code more.
 
 Since it will be a simple application, I kept the server and client in the same project, separating them with directories. This does cause some issues with shared files, such as the static files (css and html), which are needed by the client during the build and the server during deployment.
