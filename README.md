@@ -19,6 +19,14 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 16 Jan 2018
+Today I set up the base project files, including the build environment. I opted for the simplest build I could think of, using the bare minimum in webpack. I decided it is still worth it using webpack, because it will allow using imports client side, organizing the code more.
+
+Since it will be a simple application, I kept the server and client in the same project, separating them with directories. This does cause some issues with shared files, such as the static files (css and html), which are needed by the client during the build and the server during deployment.
+
+I also created a quick layout idea.
+![Layout](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/concept_divlayout.jpg)
+
 ### 14 Jan 2018
 Came up with an initial design idea, after listing down requirements. The implementation of the design is yet to be determined at this point.
 ![Normal](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/concept_normal.jpg)
