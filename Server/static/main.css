@@ -1,3 +1,74 @@
+.container-outer {
+  background-color: #821211;
+  width: 100%;
+  height: 28rem;
+  margin-top: calc(50vh - 14rem); }
 
+.container-inner {
+  background-color: #c19739;
+  width: 32rem;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.container-block-arrows {
+  background-color: #78d3d7;
+  width: 100%;
+  height: 24rem; }
+
+.arrow {
+  background-color: #f549b0;
+  width: 4rem;
+  height: 100%;
+  float: left; }
+
+.block {
+  background-color: #b013f0;
+  width: 24rem;
+  height: 100%;
+  float: left; }
+
+.block-title {
+  background-color: #6afabb;
+  width: 100%;
+  height: 6rem; }
+
+.block-middle {
+  background-color: #089cb9;
+  width: 100%;
+  height: 9rem; }
+
+.block-lower {
+  background-color: #18e413;
+  width: 100%;
+  height: 9rem; }
+
+.block-lower-half {
+  background-color: #a1999f;
+  width: 50%;
+  height: 9rem;
+  float: left; }
+
+.half-title {
+  background-color: #fc7abf;
+  width: 100%;
+  height: 3rem; }
+
+.half-body {
+  background-color: #2d50a2;
+  width: 100%;
+  height: 6rem; }
+
+.container-bubbles {
+  background-color: #3da20b;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center; }
+
+.bubble {
+  background-color: #2457c8;
+  width: 2rem;
+  height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
