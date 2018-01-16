@@ -1,0 +1,28 @@
+{
+  "name": "weathertoday",
+  "version": "1.0.0",
+  "description": "A simple weather web app showing temperature at pre-defined observation points.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramon54321/WeatherToday.git"
+  },
+  "keywords": [
+    "weather",
+    "app",
+    "observation",
+    "temperature"
+  ],
+  "author": "Ramon Brand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramon54321/WeatherToday/issues"
+  },
+  "homepage": "https://github.com/ramon54321/WeatherToday#readme",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
+}
