@@ -1,13 +1,14 @@
 //const globEntries = require("webpack-glob-entries");
-//const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 //const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-	entry: "main.js",
+	entry: "./Source/main.js",
 	output: {
-		filename: "../Static/bundle.js"
+		filename: "../Server/static/bundle.js"
 	},
 	module: {
+
 		loaders: [
 			{
 				test: /\.js/,
@@ -17,12 +18,12 @@ module.exports = {
 		]
 	},
 	plugins: [
-/*
+
 		new UglifyJsPlugin({
 			test: /\.js/,
 			parallel: 4,
 			sourceMap: true
 		})
-*/
+
 	]
 };
