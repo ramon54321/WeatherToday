@@ -19,6 +19,11 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 17 Jan 2018
+The focus of today was to finish the user interface, add all the transitions and code the client scripts to control vue. I decided to make a controller module, which manager the index of the location, deals with the interface peculiarities, such as the bubbles indicating the slide number. The controller needs to have a callback function passed to it initially, which gets called when the index changes, allowing the main.js file to update the vue data.
+
+![Localdata](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/localdata.gif)
+
 ### 16 Jan 2018 - Afternoon
 I proceeded to blockout the previous layout, and just entering some placeholder text to make sense of it. I also added some transitions in sass, which work really well, moving the main block up and out to make space for the orange and light blue block, that can be seen below.
 ![Layout](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/blockout.jpg)
