@@ -59,19 +59,19 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition-duration: 1s; }
+  transition-duration: 0.5s; }
 
 .block-middle-slide {
   background-color: #f07501;
   width: 0%;
   height: 100%;
-  transition-duration: 1s; }
+  transition-duration: 0.5s; }
 
 .block-display-wrapper {
   background-color: #bd1059;
   width: 100%;
   height: 18rem;
-  transition-duration: 1s; }
+  transition-duration: 0.5s; }
 
 .block-display-half {
   background-color: #12d5f0;
@@ -103,8 +103,21 @@
   line-height: 6rem;
   font-size: 3.5rem; }
 
-input {
-  outline: none; }
+input[type=number] {
+  background-color: #ecee6b;
+  width: 80%;
+  height: 6rem;
+  font-size: 4.5rem;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align: center;
+  color: inherit;
+  border: none;
+  -webkit-appearance: none; }
+  input[type=number]:focus {
+    outline: none; }
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none; }
 
 .container-bubbles {
   background-color: #3da20b;

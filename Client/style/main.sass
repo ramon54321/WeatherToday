@@ -1,4 +1,7 @@
 $color_primary: rgb(38, 185, 119)
+$color_font: rgb(250, 250, 250)
+
+$speed_slide: 0.5s
 
 .container-outer
 	background-color: rgb(130, 18, 17)
@@ -8,7 +11,7 @@ $color_primary: rgb(38, 185, 119)
 	text-align: center
 	font-family: 'Alegreya Sans SC', sans-serif
 	font-weight: 100
-	color: rgb(250, 250, 250)
+	color: $color_font
 
 .container-inner
 	background-color: rgb(193, 151, 57)
@@ -63,19 +66,19 @@ $color_primary: rgb(38, 185, 119)
 	width: 100%
 	height: 100%
 	overflow: hidden
-	transition-duration: 1s
+	transition-duration: $speed_slide
 
 .block-middle-slide
 	background-color: rgb(240, 117, 1)
 	width: 0%
 	height: 100%
-	transition-duration: 1s
+	transition-duration: $speed_slide
 
 .block-display-wrapper
 	background-color: rgb(189, 16, 89)
 	width: 100%
 	height: 18rem
-	transition-duration: 1s
+	transition-duration: $speed_slide
 
 .block-display-half
 	background-color: rgb(18, 213, 240)
@@ -107,8 +110,23 @@ $color_primary: rgb(38, 185, 119)
 	line-height: 6rem
 	font-size: 3.5rem
 
-input
-	outline: none
+input[type=number]
+	background-color: rgb(236, 238, 107)
+	width: 80%
+	height: 6rem
+	font-size: 4.5rem
+	font-family: inherit
+	font-weight: inherit
+	text-align: center
+	color: inherit
+	border: none
+	-webkit-appearance: none
+
+	&:focus
+		outline: none
+
+	&::-webkit-inner-spin-button
+		-webkit-appearance: none
 
 .container-bubbles
 	background-color: rgb(61, 162, 11)
