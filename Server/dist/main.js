@@ -34,7 +34,7 @@ routerApi.get("/*", async (ctx, next) => {
 });
 routerApi.get("/temperature", async ctx => {
 	console.log("[INFO] Serving API: Temperature");
-	ctx.body = "api";
+	ctx.body = await _database2.default.getData();
 });
 routerApi.get("/*", async ctx => {
 	console.log("[WARNING] Invalid API requested");

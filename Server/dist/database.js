@@ -31,26 +31,22 @@ const client = new _pg.Client({
 });
 
 /**
-	Private variables
-*/
-
-/**
 	Connection
 */
 (async () => {
 	console.log("[INFO][Database] Trying to connect to database");
 	await client.connect();
 	console.log("[INFO][Database] Successfully connected to database");
-
-	const res = await client.query("SELECT * FROM temperature");
-	console.log(res.rows);
 })();
 
 /**
 	Database interface object
 */
-let database = function () {
-	console.log("inside thing");
+let database = {
+	getData: async function () {
+		const res = await client.query("SELECT t2.location, COALESCE(t1.min, 0) as min, COALESCE(t1.max, 0) as max, t2.latest FROM(	WITH results24 AS ( SELECT location as location, min(temperature) as min, max(temperature) as max	FROM temperature WHERE time > now() - interval '24 hours' GROUP BY location	) SELECT location, min, max FROM results24 UNION	SELECT location, latest as min, latest as max FROM (SELECT DISTINCT ON (location) location as location, temperature as latest	FROM temperature ORDER BY location, time DESC) latestTemp WHERE NOT EXISTS (SELECT * FROM results24)) t1 RIGHT OUTER JOIN (SELECT DISTINCT ON (location) location as location, temperature as latest FROM temperature ORDER BY location, time DESC) t2 ON t2.location = t1.location");
+		return res.rows;
+	}
 };
 
 exports.default = database;
