@@ -23,12 +23,11 @@ function onIndexChange() {
 }
 
 /**
-	The controller is used as an interface to managing the current location.
+	The controller is used as an interface to manage the current location.
 
-	The only exposed methods are those inside controller. The controller will manage
-	user interface changes that need to occur when the index changes.
+	The only exposed methods are those inside the controller variable. The controller will manage user interface changes that need to occur when the index changes.
 
-	Vue will use index as the index to the array of data retrieved from the server.
+	The callback will be called when the index changes.
 */
 let controller = {
 	setCallback: function(_callback){

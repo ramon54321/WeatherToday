@@ -1,5 +1,9 @@
 import controller from "./controller"
 
+/**
+	Data will be populated by fetch request from server.
+	The server should return an array like data.
+*/
 let data = [{
 	location: "New York",
 	latest: 27,
@@ -27,6 +31,10 @@ let data = [{
 	max: 35
 }]
 
+/**
+	Vuedata is a shared reference to data used by vue.
+	Update vuedata to change values in UI.
+*/
 var vuedata = {
 	location: "Tokyo",
 	latest: 24,
@@ -34,17 +42,32 @@ var vuedata = {
 	max: 28
 }
 
+/**
+	Vueapp is the vue instance.
+*/
 var vueapp = new Vue({
 	el: "#app",
 	data: vuedata
 })
 
+/**
+	Set the callback function to call when the index changes.
+	This function sets the vuedata to the value of the data at the new index.
+*/
 controller.setCallback(function(index){
 	vuedata.location = data[index].location
 	vuedata.latest = data[index].latest
 	vuedata.min = data[index].min
 	vuedata.max = data[index].max
 })
+
+/**
+	Set the index to 0 initially TODO: set the default index to url parameter
+*/
 controller.setIndex(0)
+
+/**
+	Add event handlers to left and right arrows.
+*/
 $("#arrow_left").click(controller.previousIndex)
 $("#arrow_right").click(controller.nextIndex)
