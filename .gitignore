@@ -2,4 +2,5 @@ Documentation/*.psd
 Client/node_modules
 Server/node_modules
 Client/.sass-cache/
+Server/.env
 .sass-cache/

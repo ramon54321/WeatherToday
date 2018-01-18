@@ -1,5 +1,9 @@
 "use strict";
 
+var _database = require("./database");
+
+var _database2 = _interopRequireDefault(_database);
+
 var _koa = require("koa");
 
 var _koa2 = _interopRequireDefault(_koa);
@@ -39,7 +43,7 @@ routerApi.get("/*", async ctx => {
 
 /**
 	Router Main
-	Catch all requests, exclusing api because they were set above.
+	Catch all requests, excluding api because they were set above.
 	Try to find a static file for the request starting from the static folder.
 */
 routerMain.use(routerApi.routes());

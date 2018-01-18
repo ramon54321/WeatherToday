@@ -1,3 +1,4 @@
+import database from "./database"
 import koa from "koa"
 import send from "koa-send"
 import Router from "koa-router"
