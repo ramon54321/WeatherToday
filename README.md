@@ -19,6 +19,47 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 18 Jan 2018
+The server side is mostly completed. The decision was taken to use Koa, since it is more light weight than Express.
+
+Some time was taken to carefully construct an SQL query to retrieve an array of objects exactly as they will be used by vue.
+
+``` SQL
+
+SELECT t2.location, COALESCE(t1.min, 0) as min, COALESCE(t1.max, 0) as max, t2.latest FROM
+(
+	WITH results24 AS
+	(
+		SELECT location as location, min(temperature) as min, max(temperature) as max
+		FROM temperature
+		WHERE time > now() - interval '24 hours'
+		GROUP BY location
+	)
+
+	SELECT location, min, max FROM results24
+
+	UNION
+
+	SELECT location, latest as min, latest as max FROM
+	(SELECT DISTINCT ON (location) location as location, temperature as latest
+	FROM temperature
+	ORDER BY location, time DESC) latestTemp
+
+	WHERE NOT EXISTS (SELECT * FROM results24)
+) t1
+
+RIGHT OUTER JOIN
+
+(SELECT DISTINCT ON (location) location as location, temperature as latest
+FROM temperature
+ORDER BY location, time DESC) t2
+
+ON t2.location = t1.location
+```
+The first selection gets the location, min and max temperatures for the past 24 hours, failing which will get the last temperature, if there is no temperature in the last 24 hours. If that also fails, meaning there is no temperature data at all for the location, a 0 is returned.
+
+The next selection gets the latest temperature, followed by a right outer join on the location to join the selections. Right outer is used to ensure the latest is returned even if the initial selection does not return anything.
+
 ### 17 Jan 2018
 The focus of today was to finish the user interface, add all the transitions and code the client scripts to control vue. I decided to make a controller module, which manager the index of the location, deals with the interface peculiarities, such as the bubbles indicating the slide number. The controller needs to have a callback function passed to it initially, which gets called when the index changes, allowing the main.js file to update the vue data.
 
