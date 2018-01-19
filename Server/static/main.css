@@ -73,7 +73,7 @@ html {
   transition-duration: 0.4s;
   cursor: pointer; }
   .arrow:hover {
-    color: rgba(250, 250, 250, 0.9); }
+    color: rgba(30, 30, 30, 0.9); }
   .arrow:active {
     color: rgba(250, 250, 250, 0.25); }
   .arrow.left::before {
@@ -214,6 +214,6 @@ input[type=number] {
     content: "●";
     font-size: 2rem; }
   .bubble.active {
-    color: rgba(250, 250, 250, 0.9); }
+    color: rgba(30, 30, 30, 0.9); }
 
 /*# sourceMappingURL=main.css.map */
