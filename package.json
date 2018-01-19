@@ -1,9 +1,0 @@
-{
-  "name": "weathertoday",
-  "version": "1.0.0",
-  "description": "A simple weather web app showing temperature at pre-defined observation points.",
-  "scripts": {
-    "heroku-prebuild": "cd Server && npm install",
-	"heroku-postbuild": "npm --prefix Server run start"
-  }
-}
