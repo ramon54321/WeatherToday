@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "build": "babel src -d dist && node dist/main.js",
-	"start": "node dist/main.js"
+    "start": "node dist/main.js"
   },
   "repository": {
     "type": "git",

@@ -4,6 +4,6 @@
   "description": "A simple weather web app showing temperature at pre-defined observation points.",
   "main": "",
   "scripts": {
-    "postinstall": "npm install --prefix Server"
+    "postinstall": "cd Server && npm install"
   }
 }
