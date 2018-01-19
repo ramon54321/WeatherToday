@@ -38,6 +38,8 @@ routerApi.all("/*", async (ctx, next) => {
 });
 routerApi.get("/temperature", async ctx => {
 	console.log("[INFO] Serving API [GET]: Temperature");
+	// -- Sleep is used to simulate processing in retrieving data from database.
+	sleep(2000);
 	ctx.body = await _database2.default.getData();
 });
 routerApi.post("/temperature", (0, _koaBody2.default)(), async ctx => {
@@ -68,3 +70,14 @@ app.use(routerMain.routes());
 app.listen(process.env.PORT || 3000);
 
 console.log("[INFO] Server Started");
+
+/**
+	Utility function to keep the cpu busy for fake processing simulation.
+*/
+function sleep(time) {
+	let _time = new Date();
+	let currentTime = null;
+	do {
+		currentTime = new Date();
+	} while (currentTime - _time < time);
+}
