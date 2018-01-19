@@ -5,6 +5,9 @@
 .unselectable {
   user-select: none; }
 
+.hidden {
+  display: none; }
+
 html {
   width: 100%;
   height: 100%;
@@ -13,6 +16,14 @@ html {
   background-position: center;
   background-repeat: no-repeat; }
 
+#loading {
+  width: 100%;
+  height: 24rem;
+  line-height: 24rem;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center; }
+
 .container-outer {
   width: 100%;
   height: 28rem;
@@ -20,7 +31,8 @@ html {
   text-align: center;
   font-family: "Alegreya Sans SC", sans-serif;
   font-weight: 100;
-  color: #fafafa; }
+  color: #fafafa;
+  position: relative; }
 
 .container-inner {
   width: 32rem;
@@ -95,6 +107,8 @@ html {
     background-color: #00f151; }
   .block-middle-slide:active {
     background-color: #1f8542; }
+  .block-middle-slide.disabled {
+    background-color: #ad3730; }
 
 .slide-top {
   width: 9rem;
@@ -156,7 +170,11 @@ input[type=number] {
   color: inherit;
   border: none;
   border-bottom: 1px solid #fafafa;
+  transition-duration: 0.2s;
   -webkit-appearance: none; }
+  input[type=number].invalid {
+    width: 60%;
+    border-bottom: 3px solid #fafafa; }
   input[type=number]:focus {
     outline: none; }
   input[type=number]::-webkit-inner-spin-button {

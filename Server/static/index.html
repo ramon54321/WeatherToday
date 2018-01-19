@@ -12,7 +12,10 @@
 		<div id="app">
 			<div v-cloak>
 				<div class="container-outer">
-					<div class="container-inner">
+					<div id="loading">
+						loading...
+					</div>
+					<div id="mainContainer" class="container-inner hidden">
 						<div class="container-block-arrows">
 							<div id="arrow_left" class="arrow left"></div>
 							<div class="block">
@@ -24,15 +27,15 @@
 												{{latest}}&deg;
 											</div>
 											<div class="block-display-half">
-												<input type="number" />&deg;
+												<input id="temperatureInput" type="number" />&deg;
 											</div>
 										</div>
 									</div>
-									<div class="block-middle-slide unselectable">
+									<div id="add" class="block-middle-slide unselectable">
 										<div class="slide-top">
 											<img src="./images/plus.png" alt="add">
 										</div>
-										<div class="slide-bottom">
+										<div id="slide-bottom-text" class="slide-bottom">
 											ADD
 										</div>
 									</div>
@@ -52,7 +55,7 @@
 						</div>
 						<div class="container-bubbles">
 							<div id="bubble_0" class="bubble"></div>
-							<div id="bubble_1" class="bubble active"></div>
+							<div id="bubble_1" class="bubble"></div>
 							<div id="bubble_2" class="bubble"></div>
 							<div id="bubble_3" class="bubble"></div>
 							<div id="bubble_4" class="bubble"></div>

@@ -16,6 +16,10 @@ var _koaRouter = require("koa-router");
 
 var _koaRouter2 = _interopRequireDefault(_koaRouter);
 
+var _koaBody = require("koa-body");
+
+var _koaBody2 = _interopRequireDefault(_koaBody);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const app = new _koa2.default();
@@ -28,15 +32,21 @@ const routerApi = new _koaRouter2.default({ prefix: "/api" });
 	Then catch specific request and send response.
 	If no specific request is caught, catch all api requests again to throw error.
 */
-routerApi.get("/*", async (ctx, next) => {
+routerApi.all("/*", async (ctx, next) => {
 	console.log("[INFO] API requested");
 	await next();
 });
 routerApi.get("/temperature", async ctx => {
-	console.log("[INFO] Serving API: Temperature");
+	console.log("[INFO] Serving API [GET]: Temperature");
 	ctx.body = await _database2.default.getData();
 });
-routerApi.get("/*", async ctx => {
+routerApi.post("/temperature", (0, _koaBody2.default)(), async ctx => {
+	console.log("[INFO] Serving API [POST]: Temperature");
+	let res = await _database2.default.addNew(ctx.request.body.location, ctx.request.body.temperature);
+	console.log(res);
+	ctx.body = res;
+});
+routerApi.all("/*", async ctx => {
 	console.log("[WARNING] Invalid API requested");
 	ctx.throw(400, "Invalid api request");
 });

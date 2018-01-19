@@ -26,14 +26,22 @@ const client = new Client({
 	console.log("[INFO][Database] Successfully connected to database")
 })()
 
-
 /**
 	Database interface object
+	Documentation contains more information on getData query.
 */
 let database = {
 	getData: async function () {
-		const res = await client.query("SELECT t2.location, COALESCE(t1.min, 0) as min, COALESCE(t1.max, 0) as max, t2.latest FROM(	WITH results24 AS ( SELECT location as location, min(temperature) as min, max(temperature) as max	FROM temperature WHERE time > now() - interval '24 hours' GROUP BY location	) SELECT location, min, max FROM results24 UNION	SELECT location, latest as min, latest as max FROM (SELECT DISTINCT ON (location) location as location, temperature as latest	FROM temperature ORDER BY location, time DESC) latestTemp WHERE NOT EXISTS (SELECT * FROM results24)) t1 RIGHT OUTER JOIN (SELECT DISTINCT ON (location) location as location, temperature as latest FROM temperature ORDER BY location, time DESC) t2 ON t2.location = t1.location")
+		const res = await client.query("SELECT t2.location, COALESCE(t1.min, 0) as min, COALESCE(t1.max, 0) as max, t2.latest FROM(	WITH results24 AS ( SELECT location as location, min(temperature) as min, max(temperature) as max	FROM temperature WHERE time > now() - interval '24 hours' GROUP BY location	) SELECT location, min, max FROM results24 UNION	SELECT location, latest as min, latest as max FROM (SELECT DISTINCT ON (location) location as location, temperature as latest	FROM temperature ORDER BY location, time DESC) latestTemp WHERE NOT EXISTS (SELECT * FROM results24)) t1 RIGHT OUTER JOIN (SELECT DISTINCT ON (location) location as location, temperature as latest FROM temperature ORDER BY location, time DESC) t2 ON t2.location = t1.location ORDER BY location")
 		return res.rows
+	},
+	addNew: async function (location, temperature) {
+		const res = await client.query({
+			name: "addNew",
+			text: "INSERT INTO temperature (time, location, temperature) VALUES (now(), $1, $2)",
+			values: [location, temperature]
+		})
+
 	}
 }
 

@@ -55,6 +55,9 @@ let controller = {
 			index -= 1
 		}
 		onIndexChange()
+	},
+	getIndex: function() {
+		return index
 	}
 }
 

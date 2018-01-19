@@ -1,6 +1,8 @@
 $color_primary: rgb(46, 195, 96)
 $color_primary_highlight: saturate($color_primary, 60)
 $color_primary_pressed: darken($color_primary, 15)
+$color_disabled: rgb(173, 55, 48)
+
 $color_font: rgb(250, 250, 250)
 
 $color_trans: rgba(20, 20, 20, 0.5)
@@ -18,6 +20,9 @@ $speed_slide: 0.5s
 .unselectable
 	user-select: none
 
+.hidden
+	display: none
+
 html
 	width: 100%
 	height: 100%
@@ -25,6 +30,15 @@ html
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
+
+#loading
+	width: 100%
+	height: 24rem
+	line-height: 24rem
+	font-size: 2rem
+	position: absolute
+	text-align: center
+
 
 .container-outer
 	width: 100%
@@ -34,6 +48,7 @@ html
 	font-family: 'Alegreya Sans SC', sans-serif
 	font-weight: 100
 	color: $color_font
+	position: relative
 
 .container-inner
 	width: 32rem
@@ -118,6 +133,9 @@ html
 	&:active
 		background-color: $color_primary_pressed
 
+	&.disabled
+		background-color: $color_disabled
+
 .slide-top
 	width: 9rem
 	height: 70%
@@ -179,7 +197,12 @@ input[type=number]
 	color: inherit
 	border: none
 	border-bottom: 1px solid $color_font
+	transition-duration: 0.2s
 	-webkit-appearance: none
+
+	&.invalid
+		width: 60%
+		border-bottom: 3px solid $color_font
 
 	&:focus
 		outline: none

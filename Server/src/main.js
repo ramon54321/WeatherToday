@@ -2,6 +2,7 @@ import database from "./database"
 import koa from "koa"
 import send from "koa-send"
 import Router from "koa-router"
+import koaBody from "koa-body"
 
 const app = new koa()
 const routerMain = new Router()
@@ -13,15 +14,20 @@ const routerApi = new Router({prefix: "/api"})
 	Then catch specific request and send response.
 	If no specific request is caught, catch all api requests again to throw error.
 */
-routerApi.get("/*", async (ctx, next) => {
+routerApi.all("/*", async (ctx, next) => {
 	console.log("[INFO] API requested");
 	await next()
 })
 routerApi.get("/temperature", async ctx => {
-	console.log("[INFO] Serving API: Temperature");
+	console.log("[INFO] Serving API [GET]: Temperature");
 	ctx.body = await database.getData()
 })
-routerApi.get("/*", async ctx => {
+routerApi.post("/temperature", koaBody(), async ctx => {
+	console.log("[INFO] Serving API [POST]: Temperature");
+	await database.addNew(ctx.request.body.location, ctx.request.body.temperature)
+	ctx.body = "done";
+})
+routerApi.all("/*", async ctx => {
 	console.log("[WARNING] Invalid API requested");
 	ctx.throw(400, "Invalid api request")
 })
