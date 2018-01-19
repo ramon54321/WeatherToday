@@ -123,3 +123,8 @@ controller.setCallback(updateVueData)
 $("#arrow_left").click(controller.previousIndex)
 $("#arrow_right").click(controller.nextIndex)
 $("#add").click(addNewTemperature)
+
+/**
+	Fade in loading.
+*/
+$("#loading").delay(200).fadeIn(800)

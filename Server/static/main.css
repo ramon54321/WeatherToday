@@ -11,7 +11,7 @@
 html {
   width: 100%;
   height: 100%;
-  background-image: url("./images/back2.jpg");
+  background-image: url("./images/back2low.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
@@ -19,11 +19,26 @@ html {
 #loading {
   width: 100%;
   height: 24rem;
-  line-height: 24rem;
+  line-height: 2rem;
+  margin-top: 9rem;
   font-size: 2rem;
   position: absolute;
   text-align: center; }
 
+#loading-bar {
+  background-color: #fafafa;
+  width: 8rem;
+  height: 0.3rem;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation: load 1s infinite ease-in-out; }
+
+@keyframes load {
+  0%, 100% {
+    width: 8rem; }
+  30% {
+    width: 1rem; } }
 .container-outer {
   width: 100%;
   height: 28rem;
