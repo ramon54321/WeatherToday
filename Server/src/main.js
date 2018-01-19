@@ -47,6 +47,6 @@ routerMain.get("/*", async ctx => {
 	Register routes to koa and start listening.
 */
 app.use(routerMain.routes())
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
 
 console.log("[INFO] Server Started");

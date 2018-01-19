@@ -42,9 +42,8 @@ routerApi.get("/temperature", async ctx => {
 });
 routerApi.post("/temperature", (0, _koaBody2.default)(), async ctx => {
 	console.log("[INFO] Serving API [POST]: Temperature");
-	let res = await _database2.default.addNew(ctx.request.body.location, ctx.request.body.temperature);
-	console.log(res);
-	ctx.body = res;
+	await _database2.default.addNew(ctx.request.body.location, ctx.request.body.temperature);
+	ctx.body = "done";
 });
 routerApi.all("/*", async ctx => {
 	console.log("[WARNING] Invalid API requested");
@@ -66,6 +65,6 @@ routerMain.get("/*", async ctx => {
 	Register routes to koa and start listening.
 */
 app.use(routerMain.routes());
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 console.log("[INFO] Server Started");
