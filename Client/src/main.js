@@ -130,7 +130,7 @@ $(document).ready(() => {
 			Fade out loading. Fade in main container.
 		*/
 		$("#loading").fadeTo(800, 0)
-		$("#mainContainer").fadeTo(1200, 1)
+		$("#mainContainer").delay(600).fadeTo(1200, 1)
 
 		/**
 			Set the index to 0 initially TODO: set the default index to url parameter
