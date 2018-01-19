@@ -126,7 +126,10 @@ $(document).ready(() => {
 	}).then((resData) => {
 		data = resData
 
-		$("#loading").fadeTo(1200, 0)
+		/**
+			Fade out loading. Fade in main container.
+		*/
+		$("#loading").fadeTo(800, 0)
 		$("#mainContainer").fadeTo(1200, 1)
 
 		/**
