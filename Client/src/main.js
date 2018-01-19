@@ -26,24 +26,6 @@ var vueapp = new Vue({
 });
 
 /**
-	Fetch the data from the server.
-*/
-fetch("api/temperature")
-.then((response) => {
-	return response.json()
-}).then((resData) => {
-	data = resData
-
-	$("#loading").fadeOut(1200)
-	$("#mainContainer").fadeIn(1200)
-
-	/**
-		Set the index to 0 initially TODO: set the default index to url parameter
-	*/
-	controller.setIndex(0)
-})
-
-/**
 	Send POST to server to add a new temperature.
 	First the inputs are validated.
 	Then the request is made.
@@ -103,13 +85,15 @@ function addNewTemperature() {
 	updateVueData(index)
 }
 
+/**
+	Set the data in the actual vue object instance to that of the cached array.
+*/
 function updateVueData(index){
 	vuedata.location = data[index].location
 	vuedata.latest = data[index].latest
 	vuedata.min = data[index].min
 	vuedata.max = data[index].max
 }
-
 
 /**
 	Set the callback function to call when the index changes.
@@ -125,6 +109,29 @@ $("#arrow_right").click(controller.nextIndex)
 $("#add").click(addNewTemperature)
 
 /**
-	Fade in loading.
+	Start logic when all content is ready.
 */
-$("#loading").delay(200).fadeIn(800)
+$(document).ready(() => {
+	/**
+		Fade in loading.
+	*/
+	$("#loading").delay(200).fadeIn(800)
+
+	/**
+		Fetch the data from the server.
+	*/
+	fetch("api/temperature")
+	.then((response) => {
+		return response.json()
+	}).then((resData) => {
+		data = resData
+
+		$("#loading").fadeOut(1200)
+		$("#mainContainer").fadeIn(1200)
+
+		/**
+			Set the index to 0 initially TODO: set the default index to url parameter
+		*/
+		controller.setIndex(0)
+	})
+})
