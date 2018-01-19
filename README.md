@@ -1,8 +1,12 @@
 # Weather Today
-A simple web app, showing the weather in various locations. Documentation is included in the repository, starting from the readme.
+A simple web app, showing the weather in various locations. The server runs on Node.js, using Koa to manage HTTP requests. The database management system is PostgreSQL.
+
+[![license](https://img.shields.io/github/license/ramon54321/WeatherToday.svg?style=for-the-badge)](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/LICENSE)
+
+### [Live Application](https://weathertodayreaktor.herokuapp.com/)
 
 ## Getting Started
-Most documetation of the project can be found in this readme, including an outline of the API.
+Most documetation of the project can be found in this readme, including an outline of the API. The intent of the project is to be viewed online at the live address specified above.
 
 ## Overview
 This project aims to create a simple weather web app, where users can add temperature observations to 5 pre-defined locations. The application will show the latest observation, and also the minimum and maximum in the last 24 hours. There is no requirement for users to log in.
@@ -15,11 +19,31 @@ Unfortunately this is a closed project, but feel free to browse the source!
 #### [Kanban Board](https://github.com/ramon54321/WeatherToday/projects/1)
 #### [SQL Scripts](https://github.com/ramon54321/WeatherToday/blob/master/Documentation/SQLScripts.md)
 
+### API Outline
+- [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
+- [POST] /api/temperature -> Adds a new temperature to database using the following template.
+	- `{ location: <location>, temperature: <temperature> }`
+
+### Dependencies
+- koa
+- koa-body
+- koa-router
+- koa-send
+- pg
+- dotenv (A dev dependency, however it is kept in code on production so is included in normal dependencies)
+
 ## Diagrams
 #### Component Diagram
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 19 Jan 2018
+Did many finishing touches to the server and client, added many error handling code and deployed the application. The deployment caused an issue due to npm --prefix not working as documented. A workaround was to use the open-source buildpack from timanovsky, which can be found [here](https://github.com/timanovsky/subdir-heroku-buildpack).
+
+The buildpack simply extracts a subdirectory from the repo to use as the project base on heroku.
+
+Also added a loading animation when the user fetches the temperature data from the server. The fetch is usually very quick, so an intentional 1 second delay was added to the server when it serves the data, to simulate heavier processing, and resulting in a smoother loading on the client. This can be removed if deemed unnessesary.
+
 ### 18 Jan 2018
 The server side is mostly completed. The decision was taken to use Koa, since it is more light weight than Express.
 
