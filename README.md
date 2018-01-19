@@ -13,6 +13,7 @@ Unfortunately this is a closed project, but feel free to browse the source!
 
 ## Further Documentation
 #### [Kanban Board](https://github.com/ramon54321/WeatherToday/projects/1)
+#### [SQL Scripts]()
 
 ## Diagrams
 #### Component Diagram
