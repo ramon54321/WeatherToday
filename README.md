@@ -54,10 +54,10 @@ Koa is used for the handling HTTP requests.
 - dotenv (A dev dependency, however it is kept in code on production so is included in normal dependencies)
 
 ### Known Bugs
-- ~~Flash on load in Safari~~
+- ~~Flash on load in Safari~~ (Fixed by using jQuery FadeTo instead of FadeOut and FadeIn)
 - ~~Flash on load in Edge~~
 - ~~Background late load in Safari~~ (Mostly Fixed)
-- Spinner on number input in Firefox
+- ~~Spinner on number input in Firefox~~
 - Fade out issue in Safari (Sometimes? Hard to recreate)
 
 ## Diagrams
