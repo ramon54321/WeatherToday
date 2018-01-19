@@ -53,6 +53,13 @@ Koa is used for the handling HTTP requests.
 - pg
 - dotenv (A dev dependency, however it is kept in code on production so is included in normal dependencies)
 
+### Known Bugs
+- ~~Flash on load in Safari~~
+- ~~Flash on load in Edge~~
+- ~~Background late load in Safari~~ (Mostly Fixed)
+- Spinner on number input in Firefox
+- Fade out issue in Safari (Sometimes? Hard to recreate)
+
 ## Diagrams
 #### Component Diagram
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
