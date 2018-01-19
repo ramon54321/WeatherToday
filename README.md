@@ -1,3 +1,5 @@
+![Logo](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/icon/Wide@0.5x-100.jpg)
+
 # Weather Today
 A simple web app, showing the weather in various locations. The server runs on Node.js, using Koa to manage HTTP requests. The database management system is PostgreSQL.
 
@@ -18,6 +20,25 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ## Further Documentation
 #### [Kanban Board](https://github.com/ramon54321/WeatherToday/projects/1)
 #### [SQL Scripts](https://github.com/ramon54321/WeatherToday/blob/master/Documentation/SQLScripts.md)
+
+### Application Outline
+The application source is split into client and server folders. The actual deployed application is only the server folder contents. The client folder purly serves as source code to build the static files in the static folder of the server, which the server then serves.
+
+#### Client
+The client uses webpack with a babel loader to transpile the the ES6 code in the src folder, and output a single bundle.js file in the static folder of the server. This bundle.js is linked in index.html, which means bundle.js is the main client code.
+
+Since the code is transpiled, we are able to use modern ES6 functionality, including importing modules, which allows us to create interfaces to more complex code.
+
+There is a controller.js file which works as a module, and serves as an interface to an index manager. This means from the main code we can simply call `controller.nextIndex()` and not worry about all the callbacks and UI updates that need to take place, or rolling over the last index, because this is all abstracted within the controller module.
+
+Vue is used as a client side templating engine, and the data object of the view instance is updated to update the client DOM live. The code could have been abstracted more, with regards to data management for Vue, however this was a very simple situation, and more abstraction may just cause more confusion and we might end up with a situation where there are many files with few lines of code.
+
+We assign a callback function to the controller module so we can 'override' the functionality when the index changes.
+
+#### Server
+The server also uses modules to organize the code. There is the main.js module which is run first, and imports database.js, which is the interface to the database, which allows us to abstract the queries and boilerplate needed to access the database, leaving us with a clean interface, which can be called like `database.getData()`.
+
+Koa is used for the handling HTTP requests.
 
 ### API Outline
 - [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
