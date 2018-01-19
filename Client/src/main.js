@@ -115,7 +115,7 @@ $(document).ready(() => {
 	/**
 		Fade in loading.
 	*/
-	$("#loading").delay(200).fadeIn(800)
+	$("#loading").delay(200).fadeTo(800, 1)
 
 	/**
 		Fetch the data from the server.
@@ -126,8 +126,8 @@ $(document).ready(() => {
 	}).then((resData) => {
 		data = resData
 
-		$("#loading").fadeOut(1200)
-		$("#mainContainer").fadeIn(1200)
+		$("#loading").fadeTo(1200, 0)
+		$("#mainContainer").fadeTo(1200, 1)
 
 		/**
 			Set the index to 0 initially TODO: set the default index to url parameter
