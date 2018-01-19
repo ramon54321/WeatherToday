@@ -5,6 +5,7 @@ A simple web app, showing the weather in various locations. The server runs on N
 
 [![license](https://img.shields.io/github/license/ramon54321/WeatherToday.svg?style=for-the-badge)](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/LICENSE)
 [![GitHub release](https://img.shields.io/github/release/ramon54321/WeatherToday.svg?style=for-the-badge)](https://github.com/ramon54321/WeatherToday/releases)
+[![GitHub issues](https://img.shields.io/github/issues/ramon54321/WeatherToday.svg?style=for-the-badge)](https://github.com/ramon54321/WeatherToday/issues)
 
 ### [Live Application](https://weathertodayreaktor.herokuapp.com/)
 
