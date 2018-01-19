@@ -221,6 +221,14 @@ input[type=number]
 	border-bottom: 1px solid $color_font
 	transition-duration: 0.2s
 	-webkit-appearance: none
+	-moz-appearance: textfield
+	-ms-appearance: none
+
+	&::-webkit-outer-spin-button
+		-webkit-appearance: none
+
+	&::-webkit-inner-spin-button
+		-webkit-appearance: none
 
 	&.invalid
 		width: 60%

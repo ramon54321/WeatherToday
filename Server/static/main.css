@@ -190,7 +190,13 @@ input[type=number] {
   border: none;
   border-bottom: 1px solid #fafafa;
   transition-duration: 0.2s;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  -ms-appearance: none; }
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none; }
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none; }
   input[type=number].invalid {
     width: 60%;
     border-bottom: 3px solid #fafafa; }
