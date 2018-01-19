@@ -15,11 +15,23 @@ Unfortunately this is a closed project, but feel free to browse the source!
 #### [Kanban Board](https://github.com/ramon54321/WeatherToday/projects/1)
 #### [SQL Scripts](https://github.com/ramon54321/WeatherToday/blob/master/Documentation/SQLScripts.md)
 
+#### API Outline
+- [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
+- [POST] /api/temperature -> Adds a new temperature to database using the following template.
+	- `{ location: <location>, temperature: <temperature> }`
+
 ## Diagrams
 #### Component Diagram
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 19 Jan 2018
+Did many finishing touches to the server and client, added many error handling code and deployed the application. The deployment caused an issue due to npm --prefix not working as documented. A workaround was to use the open-source buildpack from timanovsky, which can be found [here](https://github.com/timanovsky/subdir-heroku-buildpack).
+
+The buildpack simply extracts a subdirectory from the repo to use as the project base on heroku.
+
+Also added a loading animation when the user fetches the temperature data from the server. The fetch is usually very quick, so an intentional 1 second delay was added to the server when it serves the data, to simulate heavier processing, and resulting in a smoother loading on the client. This can be removed if deemed unnessesary.
+
 ### 18 Jan 2018
 The server side is mostly completed. The decision was taken to use Koa, since it is more light weight than Express.
 
