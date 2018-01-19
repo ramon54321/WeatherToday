@@ -1,3 +1,5 @@
+![Logo](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/icon/Wide@0.5x-100.jpg)
+
 # Weather Today
 A simple web app, showing the weather in various locations. The server runs on Node.js, using Koa to manage HTTP requests. The database management system is PostgreSQL.
 
