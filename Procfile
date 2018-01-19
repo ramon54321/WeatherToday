@@ -1,1 +1,1 @@
-web: node Server/dist/main.js
+web: npm run start --prefix Server
