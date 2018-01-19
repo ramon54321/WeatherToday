@@ -39,7 +39,7 @@ routerApi.all("/*", async (ctx, next) => {
 routerApi.get("/temperature", async ctx => {
 	console.log("[INFO] Serving API [GET]: Temperature");
 	// -- Sleep is used to simulate processing in retrieving data from database.
-	sleep(2000);
+	sleep(1500);
 	ctx.body = await _database2.default.getData();
 });
 routerApi.post("/temperature", (0, _koaBody2.default)(), async ctx => {
@@ -58,6 +58,10 @@ routerApi.all("/*", async ctx => {
 	Try to find a static file for the request starting from the static folder.
 */
 routerMain.use(routerApi.routes());
+routerMain.get("/", async ctx => {
+	console.log("[INFO] Serving static file from " + ctx.request.url);
+	await (0, _koaSend2.default)(ctx, "./static/index.html");
+});
 routerMain.get("/*", async ctx => {
 	console.log("[INFO] Serving static file from " + ctx.request.url);
 	await (0, _koaSend2.default)(ctx, ctx.path, { root: __dirname + '/../static' });

@@ -40,8 +40,12 @@ routerApi.all("/*", async ctx => {
 	Try to find a static file for the request starting from the static folder.
 */
 routerMain.use(routerApi.routes())
-routerMain.get("/*", async ctx => {
+routerMain.get("/", async ctx => {
 	console.log("[INFO] Serving static file from " + ctx.request.url);
+	await send(ctx, "./static/index.html")
+})
+routerMain.get("/*", async ctx => {
+	console.log("[INFO] Serving static file Index");
 	await send(ctx, ctx.path, { root: __dirname + '/../static' })
 })
 
