@@ -39,6 +39,10 @@ Vue is used as a client side templating engine, and the data object of the view 
 
 We assign a callback function to the controller module so we can 'override' the functionality when the index changes.
 
+The view.js module is used as an interface for fading, since there seems to be some variation between browsers, and this allows the implementation to be changed as needed without changing the code base.
+
+Data.js is used as an interface to control the vue data. This was not needed at first, but when the development of the list started, the data management became more of an issue. In retrospect, an in memory data store might be useful here, such as Redux, or a redesigned data interface would also be sufficient.
+
 #### Server
 The server also uses modules to organize the code. There is the main.js module which is run first, and imports database.js, which is the interface to the database, which allows us to abstract the queries and boilerplate needed to access the database, leaving us with a clean interface, which can be called like `database.getData()`.
 
@@ -46,6 +50,7 @@ Koa is used for the handling HTTP requests.
 
 ### API Outline
 - [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
+- [GET] /api/temperature/:location -> Returns the records for the specified location, limited to 12.
 - [POST] /api/temperature -> Adds a new temperature to database using the following template.
 	- `{ location: <location>, temperature: <temperature> }`
 
