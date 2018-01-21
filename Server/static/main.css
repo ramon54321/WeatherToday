@@ -266,13 +266,13 @@ input[type=number] {
 
 table {
   width: 38rem;
-  margin-top: -4rem;
+  margin-top: -2rem;
   border-collapse: collapse;
   background-color: rgba(20, 20, 20, 0.5); }
 
 tr {
   font-size: 1.5rem;
-  height: 4.5rem;
+  height: 4rem;
   transition-duration: 0.5s; }
   tr:nth-child(odd) {
     background-color: rgba(30, 30, 30, 0.3); }
