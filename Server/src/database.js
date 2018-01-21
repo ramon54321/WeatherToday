@@ -41,7 +41,14 @@ let database = {
 			text: "INSERT INTO temperature (time, location, temperature) VALUES (now(), $1, $2)",
 			values: [location, temperature]
 		})
-
+	},
+	getRecords: async function (location) {
+		const res = await client.query({
+			name: "getRecords",
+			text: "SELECT time, temperature FROM temperature WHERE location = $1 ORDER BY time DESC LIMIT 12",
+			values: [location]
+		})
+		return res.rows
 	}
 }
 

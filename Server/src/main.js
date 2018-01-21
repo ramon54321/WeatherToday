@@ -24,6 +24,12 @@ routerApi.get("/temperature", async ctx => {
 	sleep(1500)
 	ctx.body = await database.getData()
 })
+routerApi.get("/temperature/:location", async ctx => {
+	console.log("[INFO] Serving API [GET]: Temperature Records");
+	// -- Sleep is used to simulate processing in retrieving data from database.
+	sleep(500)
+	ctx.body = await database.getRecords(ctx.params.location)
+})
 routerApi.post("/temperature", koaBody(), async ctx => {
 	console.log("[INFO] Serving API [POST]: Temperature");
 	await database.addNew(ctx.request.body.location, ctx.request.body.temperature)

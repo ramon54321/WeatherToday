@@ -260,17 +260,15 @@ input[type=number] {
   .bubble.active {
     color: rgba(30, 30, 30, 0.8); }
 
-#viewList {
-  background-color: rgba(250, 250, 250, 0.6); }
-
 .container-list {
   margin-left: auto;
   margin-right: auto; }
 
 table {
   width: 38rem;
+  margin-top: -4rem;
   border-collapse: collapse;
-  background-color: rgba(30, 30, 30, 0.9); }
+  background-color: rgba(20, 20, 20, 0.5); }
 
 tr {
   font-size: 1.5rem;

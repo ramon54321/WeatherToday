@@ -42,6 +42,12 @@ routerApi.get("/temperature", async ctx => {
 	sleep(1500);
 	ctx.body = await _database2.default.getData();
 });
+routerApi.get("/temperature/:location", async ctx => {
+	console.log("[INFO] Serving API [GET]: Temperature Records");
+	// -- Sleep is used to simulate processing in retrieving data from database.
+	sleep(500);
+	ctx.body = await _database2.default.getRecords(ctx.params.location);
+});
 routerApi.post("/temperature", (0, _koaBody2.default)(), async ctx => {
 	console.log("[INFO] Serving API [POST]: Temperature");
 	await _database2.default.addNew(ctx.request.body.location, ctx.request.body.temperature);
@@ -63,7 +69,7 @@ routerMain.get("/", async ctx => {
 	await (0, _koaSend2.default)(ctx, "./static/index.html");
 });
 routerMain.get("/*", async ctx => {
-	console.log("[INFO] Serving static file from " + ctx.request.url);
+	console.log("[INFO] Serving static file Index");
 	await (0, _koaSend2.default)(ctx, ctx.path, { root: __dirname + '/../static' });
 });
 
