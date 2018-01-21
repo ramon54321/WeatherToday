@@ -58,6 +58,8 @@ Koa is used for the handling HTTP requests.
 - dotenv (A dev dependency, however it is kept in code on production so is included in normal dependencies)
 
 ### Known Bugs
+- 0 return from database for min or max which is older than 24 hours
+- ~~Edge fade issue~~ (Fixed in [this commit](https://github.com/ramon54321/WeatherToday/commit/7aaacb5d620bbe0ffecf8e15ccaa94f1a63fac61) -> Hopefully all fading is now fixed)
 - ~~Flash on load in Safari~~ (Fixed by using jQuery FadeTo instead of FadeOut and FadeIn)
 - ~~Flash on load in Edge~~
 - ~~Background late load in Safari~~ (Mostly Fixed)
