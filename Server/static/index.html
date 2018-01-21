@@ -93,45 +93,16 @@
 					<div class="view">
 						<div class="container-list">
 							<table>
-								<div class="back-button">
-
-								</div>
 								<tr>
 									<th>TIME</th>
 									<th>TEMPERATURE</th>
 								</tr>
-								<tr>
-									<td>19:34</td>
-									<td>21&deg;</td>
-								</tr>
-								<tr>
-									<td>19:21</td>
-									<td>24&deg;</td>
-								</tr>
-								<tr>
-									<td>15:54</td>
-									<td>27&deg;</td>
-								</tr>
-								<tr>
-									<td>11:12</td>
-									<td>16&deg;</td>
-								</tr>
-								<tr>
-									<td>19:34</td>
-									<td>21&deg;</td>
-								</tr>
-								<tr>
-									<td>19:21</td>
-									<td>24&deg;</td>
-								</tr>
-								<tr>
-									<td>15:54</td>
-									<td>27&deg;</td>
-								</tr>
-								<tr>
-									<td>11:12</td>
-									<td>16&deg;</td>
-								</tr>
+								<template v-for="record in records">
+									<tr>
+										<td>{{record.time}}</td>
+										<td>{{record.temperature}}&deg;</td>
+									</tr>
+								</template>
 							</table>
 						</div>
 					</div>

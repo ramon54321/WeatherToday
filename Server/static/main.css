@@ -194,6 +194,8 @@ body {
   cursor: pointer; }
   #blockListButton:hover {
     background-color: #2ec360; }
+  #blockListButton:active {
+    background-color: #1f8542; }
 
 .min {
   background-color: rgba(30, 30, 30, 0.9); }
