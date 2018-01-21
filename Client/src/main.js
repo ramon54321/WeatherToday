@@ -108,6 +108,8 @@ controller.setCallback(updateVueData)
 $("#arrow_left").click(controller.previousIndex)
 $("#arrow_right").click(controller.nextIndex)
 $("#add").click(addNewTemperature)
+$("#viewList").click(() => {view.fadeOut("#viewList", 800)})
+$("#blockListButton").click(() => {view.fadeIn("#viewList", 800)})
 
 /**
 	Start logic when all content is ready.
@@ -116,8 +118,6 @@ $(document).ready(() => {
 	/**
 		Fade in loading.
 	*/
-	//$("#viewLoading").delay(200).fadeTo(800, 1)
-	//$("#viewLoading").delay(200).show(800)
 	view.fadeIn("#viewLoading", 800)
 
 	/**
@@ -132,15 +132,8 @@ $(document).ready(() => {
 		/**
 			Fade out loading. Fade in main container.
 		*/
-		//$("#viewLoading").fadeTo(800, 0)
-		//$("#viewLoading").hide(800)
 		view.fadeOut("#viewLoading", 800)
-		//$("#viewMain").delay(600).fadeTo(1200, 1)
-		//$("#viewMain").delay(600).show(1200)
 		view.fadeIn("#viewMain", 1200)
-
-// TESTTTTT
-		//$("#viewList").delay(1600).fadeTo(1200, 1)
 
 		/**
 			Set the index to 0 initially TODO: set the default index to url parameter

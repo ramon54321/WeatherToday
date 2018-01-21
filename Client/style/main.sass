@@ -6,11 +6,13 @@ $color_disabled: rgb(173, 55, 48)
 $color_font: rgb(250, 250, 250)
 
 $color_trans: rgba(20, 20, 20, 0.5)
-$color_min: rgba(30, 30, 30, 1)
-$color_max: rgba(50, 50, 50, 1)
+$color_min: rgba(30, 30, 30, 0.9)
+$color_max: rgba(50, 50, 50, 0.9)
 
 $color_bubble_inactive: transparentize($color_font, 0.75)
 $color_bubble_active: transparentize($color_min, 0.1)
+
+$color_view_backdrop: transparentize($color_font, 0.4)
 
 $speed_slide: 0.5s
 
@@ -39,22 +41,6 @@ $speed_slide: 0.5s
 
 .spread
 	width: 100%
-
-// -- ZDepths
-.z-2
-	z-index: -2
-
-.z-1
-	z-index: -1
-
-.z0
-	z-index: 0
-
-.z1
-	z-index: 1
-
-.z2
-	z-index: 2
 
 // -- General style for html and body
 html
@@ -93,8 +79,8 @@ body
 
 // -- Loading View
 .container-loading
-	background-color: rgb(194, 209, 99)
 	width: 100%
+	margin-top: -6rem
 	line-height: 2rem
 	font-size: 2rem
 	text-align: center
@@ -116,7 +102,6 @@ body
 
 // -- Main View
 .container-outer
-	background-color: rgba(106, 222, 65, 0.5)
 	width: 100%
 	text-align: center
 	position: relative
@@ -129,12 +114,11 @@ body
 
 .container-block-arrows
 	width: 100%
-	height: 24rem
 
 .arrow
 	width: 4rem
 	height: 24rem
-	line-height: 23rem
+	line-height: 27rem
 	font-size: 6rem
 	float: left
 	color: $color_min
@@ -238,6 +222,18 @@ body
 	height: 9rem
 	float: left
 
+#blockListButton
+	background-color: $color_trans
+	width: 100%
+	height: 4rem
+	line-height: 4rem
+	font-size: 1.5rem
+	transition-duration: $speed_slide
+	cursor: pointer
+
+	&:hover
+		background-color: $color_primary
+
 .min
 	background-color: $color_min
 
@@ -310,9 +306,41 @@ input[type=number]
 		color: $color_bubble_active
 
 // -- List view
+#viewList
+	background-color: $color_view_backdrop
+
+
 .container-list
-	background-color: rgb(170, 128, 64)
-	width: 32rem
-	height: 10rem
 	margin-left: auto
 	margin-right: auto
+
+.back-button
+
+
+table
+	width: 38rem
+	border-collapse: collapse
+	background-color: rgba(30, 30, 30, 0.9)
+
+tr
+	font-size: 1.5rem
+	height: 4.5rem
+	transition-duration: $speed_slide
+
+	&:nth-child(odd)
+		background-color: transparentize($color_bubble_active, 0.5)
+
+	&:first-child
+		background-color: $color_bubble_active
+
+	&:hover
+		background-color: transparentize($color_bubble_active, 0.2)
+
+td, th
+	width: 30%
+
+th
+	font-weight: 100
+
+td
+	text-align: center

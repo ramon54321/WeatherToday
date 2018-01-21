@@ -24,7 +24,7 @@
 			<div v-cloak class="filled">
 
 				<!-- Loading View -->
-				<div id="viewLoading" class="hidden view-container">
+				<div id="viewLoading" class="hidden view-container unselectable">
 					<div class="view">
 						<div class="container-loading">
 							<div>loading</div>
@@ -34,12 +34,12 @@
 				</div>
 
 				<!-- Main View (Location, and 3 temperatures) -->
-				<div id="viewMain" class="hidden view-container">
+				<div id="viewMain" class="hidden view-container unselectable">
 					<div class="view">
 						<div class="container-outer">
 							<div class="container-inner">
 								<div class="container-block-arrows">
-									<div id="arrow_left" class="arrow left unselectable"></div>
+									<div id="arrow_left" class="arrow left"></div>
 									<div class="block">
 										<div class="block-title">{{location}}</div>
 										<div class="block-middle">
@@ -53,7 +53,7 @@
 													</div>
 												</div>
 											</div>
-											<div id="add" class="block-middle-slide unselectable">
+											<div id="add" class="block-middle-slide">
 												<div class="slide-top">
 													<img src="./images/plus.png" alt="add">
 												</div>
@@ -69,6 +69,9 @@
 												<div class="half-title">MAX</div>
 												<div class="half-body">{{max}}&deg;</div>
 											</div>
+										</div>
+										<div id="blockListButton">
+											VIEW HISTORY
 										</div>
 									</div>
 									<div id="arrow_right" class="arrow right unselectable"></div>
@@ -86,10 +89,50 @@
 				</div>
 
 				<!-- List View -->
-				<div id="viewList" class="hidden view-container">
+				<div id="viewList" class="hidden view-container unselectable">
 					<div class="view">
 						<div class="container-list">
+							<table>
+								<div class="back-button">
 
+								</div>
+								<tr>
+									<th>TIME</th>
+									<th>TEMPERATURE</th>
+								</tr>
+								<tr>
+									<td>19:34</td>
+									<td>21&deg;</td>
+								</tr>
+								<tr>
+									<td>19:21</td>
+									<td>24&deg;</td>
+								</tr>
+								<tr>
+									<td>15:54</td>
+									<td>27&deg;</td>
+								</tr>
+								<tr>
+									<td>11:12</td>
+									<td>16&deg;</td>
+								</tr>
+								<tr>
+									<td>19:34</td>
+									<td>21&deg;</td>
+								</tr>
+								<tr>
+									<td>19:21</td>
+									<td>24&deg;</td>
+								</tr>
+								<tr>
+									<td>15:54</td>
+									<td>27&deg;</td>
+								</tr>
+								<tr>
+									<td>11:12</td>
+									<td>16&deg;</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>
