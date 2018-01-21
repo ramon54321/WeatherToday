@@ -2,7 +2,7 @@ import controller from "./controller"
 
 /**
 	Data will be populated by fetch request from server.
-	The server should return an array like data.
+	The server should return an array/
 */
 let _mainData = []
 let _records = []
@@ -119,13 +119,22 @@ let data = {
 		vuedata.max = _mainData[index].max
 		vuedata.records = _records
 	},
+	/**
+		Set main data cache
+	*/
 	setData: function(resData){
 		_mainData = resData
 	},
+	/**
+		Set and assign records cache
+	*/
 	setRecords: function(resData){
 		_records = resData
 		vuedata.records = _records
 	},
+	/**
+		Get current location (Used externally for requests)
+	*/
 	getLocation: function(){
 		return vuedata.location
 	}

@@ -63,11 +63,11 @@
 										<div class="block-lower">
 											<div class="block-lower-half min">
 												<div class="half-title">MIN</div>
-												<div class="half-body">{{min}}&deg;</div>
+												<div class="half-body">{{min != 0 ? min + "&deg;" : "-"}}</div>
 											</div>
 											<div class="block-lower-half max">
 												<div class="half-title">MAX</div>
-												<div class="half-body">{{max}}&deg;</div>
+												<div class="half-body">{{max != 0 ? max + "&deg;" : "-"}}</div>
 											</div>
 										</div>
 										<div id="blockListButton">

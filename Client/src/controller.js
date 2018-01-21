@@ -1,5 +1,5 @@
 /**
-	Private declarations.
+	Interface for controlling the index/location of the main view.
 */
 let index = 0
 let callback = null

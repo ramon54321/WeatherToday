@@ -1,5 +1,5 @@
 /**
-
+	Interface for fading and changing views.
 */
 let view = {
 	fadeIn: function(element, duration) {
