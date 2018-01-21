@@ -11,6 +11,31 @@
 .hidden {
   display: none; }
 
+.shown {
+  display: block; }
+
+.filled {
+  width: 100%;
+  height: 100%; }
+
+.spread {
+  width: 100%; }
+
+.z-2 {
+  z-index: -2; }
+
+.z-1 {
+  z-index: -1; }
+
+.z0 {
+  z-index: 0; }
+
+.z1 {
+  z-index: 1; }
+
+.z2 {
+  z-index: 2; }
+
 html {
   width: 100%;
   height: 100%;
@@ -19,17 +44,38 @@ html {
   background-position: center;
   background-repeat: no-repeat; }
 
-#loading {
-  width: 100%;
-  height: 24rem;
-  line-height: 2rem;
-  margin-top: 9rem;
-  font-size: 2rem;
-  position: absolute;
-  text-align: center;
-  z-index: -5; }
+body {
+  margin: 0; }
 
-#loading-bar {
+#app {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-weight: 100;
+  color: #fafafa; }
+
+.view {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center; }
+
+.view-container {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+.container-loading {
+  background-color: #c2d163;
+  width: 100%;
+  line-height: 2rem;
+  font-size: 2rem;
+  text-align: center; }
+
+#loadingBar {
   background-color: #fafafa;
   width: 8rem;
   height: 0.3rem;
@@ -44,13 +90,9 @@ html {
   30% {
     width: 1rem; } }
 .container-outer {
+  background-color: rgba(106, 222, 65, 0.5);
   width: 100%;
-  height: 28rem;
-  margin-top: calc(50vh - 14rem);
   text-align: center;
-  font-family: "Alegreya Sans SC", sans-serif;
-  font-weight: 100;
-  color: #fafafa;
   position: relative; }
 
 .container-inner {
@@ -221,5 +263,12 @@ input[type=number] {
     font-size: 2rem; }
   .bubble.active {
     color: rgba(30, 30, 30, 0.9); }
+
+.container-list {
+  background-color: #aa8040;
+  width: 32rem;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,4 +1,5 @@
 import controller from "./controller"
+import view from "./view"
 
 /**
 	Data will be populated by fetch request from server.
@@ -71,7 +72,7 @@ function addNewTemperature() {
 	$("#add").unbind("click")
 	$("#add").addClass("disabled")
 	$("#temperatureInput").removeClass("invalid")
-	$("#slide-bottom-text").text("ADDED")
+	$("#slideBottomText").text("ADDED")
 
 	// -- Update Vue
 	let index = controller.getIndex()
@@ -115,7 +116,9 @@ $(document).ready(() => {
 	/**
 		Fade in loading.
 	*/
-	$("#loading").delay(200).fadeTo(800, 1)
+	//$("#viewLoading").delay(200).fadeTo(800, 1)
+	//$("#viewLoading").delay(200).show(800)
+	view.fadeIn("#viewLoading", 800)
 
 	/**
 		Fetch the data from the server.
@@ -129,8 +132,15 @@ $(document).ready(() => {
 		/**
 			Fade out loading. Fade in main container.
 		*/
-		$("#loading").fadeTo(800, 0)
-		$("#mainContainer").delay(600).fadeTo(1200, 1)
+		//$("#viewLoading").fadeTo(800, 0)
+		//$("#viewLoading").hide(800)
+		view.fadeOut("#viewLoading", 800)
+		//$("#viewMain").delay(600).fadeTo(1200, 1)
+		//$("#viewMain").delay(600).show(1200)
+		view.fadeIn("#viewMain", 1200)
+
+// TESTTTTT
+		//$("#viewList").delay(1600).fadeTo(1200, 1)
 
 		/**
 			Set the index to 0 initially TODO: set the default index to url parameter
