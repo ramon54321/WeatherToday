@@ -4,11 +4,15 @@
 A simple web app, showing the weather in various locations. The server runs on Node.js, using Koa to manage HTTP requests. The database management system is PostgreSQL.
 
 [![license](https://img.shields.io/github/license/ramon54321/WeatherToday.svg?style=for-the-badge)](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/ramon54321/WeatherToday.svg?style=for-the-badge)](https://github.com/ramon54321/WeatherToday/releases)
+[![GitHub issues](https://img.shields.io/github/issues/ramon54321/WeatherToday.svg?style=for-the-badge)](https://github.com/ramon54321/WeatherToday/issues)
 
 ### [Live Application](https://weathertodayreaktor.herokuapp.com/)
 
 ## Getting Started
 Most documetation of the project can be found in this readme, including an outline of the API. The intent of the project is to be viewed online at the live address specified above.
+
+#### [Latest Release](https://github.com/ramon54321/WeatherToday/releases/tag/v1.0)
 
 ## Overview
 This project aims to create a simple weather web app, where users can add temperature observations to 5 pre-defined locations. The application will show the latest observation, and also the minimum and maximum in the last 24 hours. There is no requirement for users to log in.
@@ -54,10 +58,10 @@ Koa is used for the handling HTTP requests.
 - dotenv (A dev dependency, however it is kept in code on production so is included in normal dependencies)
 
 ### Known Bugs
-- ~~Flash on load in Safari~~
+- ~~Flash on load in Safari~~ (Fixed by using jQuery FadeTo instead of FadeOut and FadeIn)
 - ~~Flash on load in Edge~~
 - ~~Background late load in Safari~~ (Mostly Fixed)
-- Spinner on number input in Firefox
+- ~~Spinner on number input in Firefox~~
 - Fade out issue in Safari (Sometimes? Hard to recreate)
 
 ## Diagrams
