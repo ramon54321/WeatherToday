@@ -69,6 +69,15 @@ Koa is used for the handling HTTP requests.
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 20 Jan 2018
+Cleaned up overall project and proceeded to conceptulize a further feature. Since v1.0 is deployed, it is a reasonable time to fix small bugs.
+
+I noticed the fadeing animation was problematic on Edge, and after hours of digging, I discovered it was due to an absolute positioned element inside the view being faded. I changed the css a little, and restructured the html, and all was resolved.
+
+Currently, the idea is to add an additional view, which will be a list of the most recent observations for the given location. I am now moving slightly into the terrritory where a framework would become helpful, however, since the application will not grow much more after this point, I still think using a framework such as React or Angular, is a little overkill.
+
+Sticking to pure jQuery and usign Vue for reactiveness, results is a lean and quick package, and in my opinion, is preferrable to a framework for small applications which do not really reap the benifits of a heavy framework.
+
 ### 19 Jan 2018
 Did many finishing touches to the server and client, added many error handling code and deployed the application. The deployment caused an issue due to npm --prefix not working as documented. A workaround was to use the open-source buildpack from timanovsky, which can be found [here](https://github.com/timanovsky/subdir-heroku-buildpack).
 
