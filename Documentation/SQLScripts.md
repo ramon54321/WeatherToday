@@ -32,6 +32,14 @@ ON t2.location = t1.location
 
 ORDER BY location
 ```
+## Get recprds by location
+``` SQL
+SELECT time, temperature
+FROM temperature
+WHERE location = 'New York'
+ORDER BY time DESC
+LIMIT 12
+```
 
 ## Initialize DB with fake data
 
