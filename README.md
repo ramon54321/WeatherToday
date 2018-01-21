@@ -50,7 +50,7 @@ Koa is used for the handling HTTP requests.
 
 ### API Outline
 - [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
-- [GET] /api/temperature/:location -> Returns the records for the specified location, limited to 12.
+- [GET] /api/temperature/:location -> Returns the records for the specified location, limited to 10.
 - [POST] /api/temperature -> Adds a new temperature to database using the following template.
 	- `{ location: <location>, temperature: <temperature> }`
 
