@@ -1,32 +1,47 @@
 {
-  "name": "weathertoday-client",
-  "version": "1.0.0",
-  "description": "Client - A simple weather web app showing temperature at pre-defined observation points.",
-  "main": "",
-  "scripts": {
-    "build": "webpack --color"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ramon54321/WeatherToday.git"
-  },
-  "keywords": [
-    "weather",
-    "app",
-    "observation",
-    "temperature"
-  ],
-  "author": "Ramon Brand",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ramon54321/WeatherToday/issues"
-  },
-  "homepage": "https://github.com/ramon54321/WeatherToday#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.2",
-    "webpack": "^3.10.0"
-  }
+	"name": "weathertoday-client",
+	"version": "1.0.0",
+	"description": "Client - A simple weather web app showing temperature at pre-defined observation points.",
+	"main": "",
+	"scripts": {
+		"build": "webpack --color",
+		"test": "ava"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ramon54321/WeatherToday.git"
+	},
+	"keywords": [
+		"weather",
+		"app",
+		"observation",
+		"temperature"
+	],
+	"author": "Ramon Brand",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ramon54321/WeatherToday/issues"
+	},
+	"homepage": "https://github.com/ramon54321/WeatherToday#readme",
+	"devDependencies": {
+		"ava": "^0.24.0",
+		"ava-browser-fixture": "^2.0.2",
+		"babel-core": "^6.26.0",
+		"babel-loader": "^7.1.2",
+		"babel-preset-env": "^1.6.1",
+		"babel-register": "^6.26.0",
+		"jquery": "^3.3.1",
+		"uglifyjs-webpack-plugin": "^1.1.2",
+		"webpack": "^3.10.0"
+	},
+	"ava": {
+		"files": [
+			"tests/**/*.test.js"
+		],
+		"tap": true,
+		"babel": "inherit",
+		"require": [
+			"babel-register"
+		]
+	}
 }

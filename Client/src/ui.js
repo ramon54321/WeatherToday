@@ -1,3 +1,4 @@
+import $ from "jquery"
 import controller from "./controller"
 import view from "./view"
 import data from "./data"

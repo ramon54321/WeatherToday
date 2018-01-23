@@ -1,3 +1,4 @@
+import $ from "jquery"
 /**
 	Interface for controlling the index/location of the main view.
 */
@@ -62,3 +63,13 @@ let controller = {
 }
 
 export default controller
+
+/**
+	Interface purly for testing purposes.
+*/
+export let controller_test = {
+	getCallback: function() {
+		console.log("[TEST] Getting callback: " + callback);
+		return callback
+	}
+}

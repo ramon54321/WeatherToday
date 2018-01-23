@@ -1,3 +1,4 @@
+import $ from "jquery"
 /**
 	Interface for fading and changing views.
 */
