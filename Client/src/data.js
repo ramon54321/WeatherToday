@@ -24,12 +24,20 @@ var vuedata = {
 */
 var vueapp = new Vue({
 	el: "#app",
-	data: vuedata
+	data: vuedata,
+	methods: {
+		trimDate: function (timeString, event) {
+			return timeString.split("T")[0]
+		},
+		trimTime: function (timeString, event) {
+			return timeString.split("T")[1].slice(0, 5)
+		}
+	}
 });
 
 
 /**
-
+	Interface for data control.
 */
 let data = {
 	/**
@@ -71,7 +79,7 @@ let data = {
 			console.log("[INFO] Completed POST to server with temperature " + temperature + " at location " + location)
 		})
 
-		// -- UI Update
+		// -- UI Update TODO: Move this to UI - Maybe a UI interface...
 		$("#add").unbind("click")
 		$("#add").addClass("disabled")
 		$("#temperatureInput").removeClass("invalid")

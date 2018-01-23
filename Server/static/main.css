@@ -281,9 +281,6 @@ tr {
   tr:hover {
     background-color: rgba(30, 30, 30, 0.6); }
 
-td, th {
-  width: 30%; }
-
 th {
   font-weight: 100; }
 

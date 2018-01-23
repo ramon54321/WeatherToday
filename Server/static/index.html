@@ -94,12 +94,14 @@
 						<div class="container-list">
 							<table>
 								<tr>
+									<th>DATE</th>
 									<th>TIME</th>
 									<th>TEMPERATURE</th>
 								</tr>
 								<template v-for="record in records">
 									<tr>
-										<td>{{record.time}}</td>
+										<td>{{trimDate(record.time)}}</td>
+										<td>{{trimTime(record.time)}}</td>
 										<td>{{record.temperature}}&deg;</td>
 									</tr>
 								</template>
