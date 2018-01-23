@@ -78,6 +78,13 @@ Koa is used for the handling HTTP requests.
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 23 Jan 2018 - V1.1 Deploy
+Added basic unit tests to client. Cleaned up modules and interfaces. Also moved to an npm version of jQuery rather than a CDN linked script, since this was required when testing.
+
+Testing also required some additional functions to be exposed by the modules, which led to test specific interfaces being exported from modules in the form of <module>_test.
+	
+The testing also calls for Vue to be implemented using npm and run through webpack rather than linked in through a CDN, however for this project, it is sufficient. If the project is to grow anymore though, it would be wise to move to an npm version of Vue also.
+
 ### 21 Jan 2018
 Added the new list view, including the backend api to retrieve the list records. Also did quite some work to reorganize and refactor some code, and thinking about doing even more refactoring to clean the modules a little.
 
@@ -87,7 +94,7 @@ The same applies to the callback function which is passed to controller.js, whic
 
 The project has grown more than planned, and the initial idea of a single view widget has been surpassed. I can honestly say, in retrospect, I should maybe have used a light framework such as React. However, I will take this as a lesson, and improve on my vanilla js in the process.
 
-### 20 Jan 2018
+### 20 Jan 2018 - V1.0 Deploy
 Cleaned up overall project and proceeded to conceptulize a further feature. Since v1.0 is deployed, it is a reasonable time to fix small bugs.
 
 I noticed the fadeing animation was problematic on Edge, and after hours of digging, I discovered it was due to an absolute positioned element inside the view being faded. I changed the css a little, and restructured the html, and all was resolved.
