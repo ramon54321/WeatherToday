@@ -38,7 +38,7 @@ SELECT time, temperature
 FROM temperature
 WHERE location = 'New York'
 ORDER BY time DESC
-LIMIT 12
+LIMIT 10
 ```
 
 ## Initialize DB with fake data

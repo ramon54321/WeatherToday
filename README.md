@@ -50,7 +50,7 @@ Koa is used for the handling HTTP requests.
 
 ### API Outline
 - [GET] /api/temperature -> Returns the json object exactly as vue needs it in order to render, grouped by location.
-- [GET] /api/temperature/:location -> Returns the records for the specified location, limited to 12.
+- [GET] /api/temperature/:location -> Returns the records for the specified location, limited to 10.
 - [POST] /api/temperature -> Adds a new temperature to database using the following template.
 	- `{ location: <location>, temperature: <temperature> }`
 
@@ -76,6 +76,15 @@ Koa is used for the handling HTTP requests.
 ![Component Diagram](https://raw.githubusercontent.com/ramon54321/WeatherToday/master/Documentation/ComponentDiagram.svg?sanitize=true)
 
 ## Dev Log
+### 21 Jan 2018
+Added the new list view, including the backend api to retrieve the list records. Also did quite some work to reorganize and refactor some code, and thinking about doing even more refactoring to clean the modules a little.
+
+I am not happy with how the data module also controls some ui aspects, as this is a clear violation of the single responsibility principle, however, since it was originally a general main.js function, it made sense where it was. Now that it is in its own module, data.js, I need to consider a way to extract the ui control from it.
+
+The same applies to the callback function which is passed to controller.js, which now gets passed a function from another module, namely data.js.
+
+The project has grown more than planned, and the initial idea of a single view widget has been surpassed. I can honestly say, in retrospect, I should maybe have used a light framework such as React. However, I will take this as a lesson, and improve on my vanilla js in the process.
+
 ### 20 Jan 2018
 Cleaned up overall project and proceeded to conceptulize a further feature. Since v1.0 is deployed, it is a reasonable time to fix small bugs.
 
