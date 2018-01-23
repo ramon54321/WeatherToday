@@ -16,28 +16,7 @@ var vuedata = {
 	latest: "",
 	min: "",
 	max: "",
-	records: [
-		{
-			time: "33:41",
-			temperature: 23
-		},
-		{
-			time: "43:41",
-			temperature: 24
-		},
-		{
-			time: "53:41",
-			temperature: 25
-		},
-		{
-			time: "63:41",
-			temperature: 26
-		},
-		{
-			time: "73:41",
-			temperature: 27
-		}
-	]
+	records: []
 }
 
 /**

@@ -3,6 +3,11 @@ import view from "./view"
 import data from "./data"
 
 /**
+	Globals
+*/
+const FADE_DURATION = 200
+
+/**
 	Set the callback function to call when the index changes.
 	This function sets the vuedata to the value of the data at the new index.
 */
@@ -31,8 +36,8 @@ $("#blockListButton").click(() => {
 	}).then((resData) => {
 		data.setRecords(resData)
 		$("#blockListButton").text(buttonText)
-		view.fadeOut("#viewMain", 400)
-		view.fadeIn("#viewList", 400)
+		view.fadeOut("#viewMain", FADE_DURATION)
+		view.fadeIn("#viewList", FADE_DURATION)
 	})
 
 	$("#blockListButton").text("loading")
@@ -41,7 +46,7 @@ $("#blockListButton").click(() => {
 /**
 	Clicking on the list itself.
 */
-$("#viewList").click(() => {view.fadeOut("#viewList", 400); view.fadeIn("#viewMain", 400);})
+$("#viewList").click(() => {view.fadeOut("#viewList", FADE_DURATION); view.fadeIn("#viewMain", FADE_DURATION);})
 
 
 /**
@@ -51,7 +56,7 @@ $(document).ready(() => {
 	/**
 		Fade in loading.
 	*/
-	view.fadeIn("#viewLoading", 400)
+	view.fadeIn("#viewLoading", FADE_DURATION)
 
 	/**
 		Fetch the data from the server.
@@ -65,8 +70,8 @@ $(document).ready(() => {
 		/**
 			Fade out loading. Fade in main container.
 		*/
-		view.fadeOut("#viewLoading", 400)
-		view.fadeIn("#viewMain", 400)
+		view.fadeOut("#viewLoading", FADE_DURATION)
+		view.fadeIn("#viewMain", FADE_DURATION)
 
 		/**
 			Set the index to 0 initially TODO: set the default index to url parameter
