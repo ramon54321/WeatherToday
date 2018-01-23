@@ -28,6 +28,8 @@ Unfortunately this is a closed project, but feel free to browse the source!
 ### Application Outline
 The application source is split into client and server folders. The actual deployed application is only the server folder contents. The client folder purly serves as source code to build the static files in the static folder of the server, which the server then serves.
 
+The client has some simple unit tests done with Ava. It was required to use Ava-browser-fixer to connect a context to the instance, to allow jQuery to be executed during the tests. Some modules also have an additional <module>_test interface export, to allow calling additional functions that are specific to testing.
+
 #### Client
 The client uses webpack with a babel loader to transpile the the ES6 code in the src folder, and output a single bundle.js file in the static folder of the server. This bundle.js is linked in index.html, which means bundle.js is the main client code.
 
